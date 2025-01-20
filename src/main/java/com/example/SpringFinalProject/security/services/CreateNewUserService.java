@@ -6,7 +6,6 @@ import com.example.SpringFinalProject.product.Command;
 import com.example.SpringFinalProject.security.CustomUser;
 import com.example.SpringFinalProject.security.CustomUserRepository;
 import com.example.SpringFinalProject.security.jwt.Authority;
-import com.example.SpringFinalProject.security.jwt.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

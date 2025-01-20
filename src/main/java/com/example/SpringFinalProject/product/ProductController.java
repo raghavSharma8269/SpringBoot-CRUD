@@ -1,6 +1,5 @@
 package com.example.SpringFinalProject.product;
 
-import com.example.SpringFinalProject.product.model.Category;
 import com.example.SpringFinalProject.product.model.Product;
 import com.example.SpringFinalProject.product.model.ProductDTO;
 import com.example.SpringFinalProject.product.model.UpdateProductCommand;

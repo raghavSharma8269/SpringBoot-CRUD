@@ -1,7 +1,6 @@
 package com.example.SpringFinalProject.security;
 
 import com.example.SpringFinalProject.security.jwt.Authority;
-import com.example.SpringFinalProject.security.jwt.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
