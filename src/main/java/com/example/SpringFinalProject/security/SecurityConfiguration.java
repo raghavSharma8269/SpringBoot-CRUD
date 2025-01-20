@@ -39,22 +39,12 @@ public class SecurityConfiguration {
                                     "/userlogin",
                                     "/product/{id}",
                                     "/products",
+                                    "/product/searchByNameOrDescription",
+                                    "/product/searchbycategory",
                                     "/error"
                             )
                             .permitAll();
 
-                    // User endpoints (ADMIN can also access these)
-                    authorize.requestMatchers("/updateproduct").hasAnyAuthority("USER", "ADMIN");
-                    authorize.requestMatchers("/createproduct").hasAnyAuthority("USER", "ADMIN");
-
-                    // Admin-only endpoints
-                    authorize.requestMatchers("/deleteuser").hasAuthority("ADMIN");
-                    authorize.requestMatchers("/deleteproduct").hasAuthority("ADMIN");
-
-                    authorize.requestMatchers("/getusers").hasAuthority("ADMIN");
-                    authorize.requestMatchers("/getuser/{username}").hasAuthority("ADMIN");
-
-                    authorize.requestMatchers("/error").permitAll();
                     authorize.anyRequest().authenticated();
                 })
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

@@ -32,17 +32,19 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteuser/{username}")
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteUser(@PathVariable String username){
         return deleteUserService.execute(username);
     }
 
     @GetMapping("/getusers")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<List<CustomUser>> getAllUsers(){
         return getAllUsersService.execute(null);
     }
 
     @GetMapping("/getuser/{username}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<CustomUserDTO> getUserByUsername(@PathVariable String username){
         return getUserByUsername.execute(username);
     }

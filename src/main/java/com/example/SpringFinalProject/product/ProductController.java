@@ -36,6 +36,7 @@ public class ProductController {
 
 
     @PostMapping("/createproduct")
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody Product product){
         return createProductService.execute(product);
     }
@@ -51,11 +52,13 @@ public class ProductController {
     }
 
     @DeleteMapping("/deleteproduct/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable String id){
         return deleteProductService.execute(id);
     }
 
     @PutMapping("/updateproduct/{id}")
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<ProductDTO> updateProduct (@PathVariable String id, @RequestBody Product product){
         return updateProductService.execute(new UpdateProductCommand(id, product));
     }
