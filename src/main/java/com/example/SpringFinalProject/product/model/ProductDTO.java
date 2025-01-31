@@ -2,8 +2,6 @@ package com.example.SpringFinalProject.product.model;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
 public class ProductDTO {
     private String id;
@@ -13,7 +11,7 @@ public class ProductDTO {
     private double price;
     private Region region;
     private Category category;
-
+    private String imageUrl;
     public ProductDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
@@ -22,5 +20,6 @@ public class ProductDTO {
         this.price = product.getPrice();
         this.category = product.getCategory();
         this.region = product.getRegion();
+        this.imageUrl = product.getImageUrl();
     }
 }

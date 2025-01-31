@@ -45,6 +45,9 @@ public class ProductValidator {
             throw new ProductNotValidException(ExceptionMessages.REGION_NOT_SUPPORTED.getMessage());
         }
 
+        if (product.getImageUrl().isEmpty()){
+            throw new ProductNotValidException(ExceptionMessages.IMAGE_URL_IS_NEEDED.getMessage());
+        }
 
         if(ProfanityValidator.hasProfanity(product.getName(), product.getDescription())){
         throw new ProductNotValidException(ExceptionMessages.NO_PROFANITY.getMessage());

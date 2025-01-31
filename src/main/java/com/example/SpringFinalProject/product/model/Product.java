@@ -1,8 +1,6 @@
 package com.example.SpringFinalProject.product.model;
 
-import io.micrometer.core.annotation.Counted;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -36,6 +34,9 @@ public class Product {
     @Column(name = "region")
     @Enumerated(EnumType.STRING)
     private Region region;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 
     @CreationTimestamp()
     @Column(name = "created_at", nullable = false, updatable = false)

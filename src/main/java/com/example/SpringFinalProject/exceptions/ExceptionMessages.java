@@ -18,7 +18,8 @@ public enum ExceptionMessages {
     USERNAME_NOT_AVAILABLE("This username is already taken"),
     USERNAME_IS_NEEDED("Username is needed"),
     PASSWORD_IS_NEEDED("Password is needed"),
-    USER_DOES_NOT_EXIST("This user does not exist");
+    USER_DOES_NOT_EXIST("This user does not exist"),
+    IMAGE_URL_IS_NEEDED("Image URL is needed");
 
 
     private final String message;
